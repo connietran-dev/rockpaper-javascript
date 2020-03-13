@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// Rock/Paper/Scissors - The Game:
+// There are 2 players.
+// Each player chooses rock, paper, or scissors.
+
+
+// PLAYER 1
+
+// Ask the user for their choice.
+
+var player1 = window.prompt("Let's play rock/paper/scissors! --- Choose r for rock, p for paper, or s for scissors.");
+
+
+// Convert the user's choice to the full text: rock, paper, or scissors.
+
+if (player1 === "r") {
+    var player1 = "rock";
+}
+else if (player1 === "p") {
+    var player1 = "paper";
+}
+else if (player1 === "s") {
+    var player1 = "scissors";
+}
+
+
+// Let the user know their choice.
+
+console.log(player1);
+
+alert("You chose: " + player1);
+
+
+// TODO - This is some older code for the player's choice that I was playing with. I actually don't need this, but it's a nice OR statement. If I have time, I'll code the Cancel button.
+
+// if (player1 == "r" | player1 == "p" | player1 == "s") {
+//     alert("You chose: " + player1);
+// }
+
+
+// COMPUTER'S TURN
+
+// Computer gets a turn and needs to randomly choose rock, paper or scissors.
+
+// Let's make the computer randomly choose a number between 1 and 10. Then convert that to one of the choices.
+
+
+// Choose a random number.
+
+var computerNo = (Math.random()*10);
+
+console.log(computerNo);
+
+
+// If the number is between 0-3 = rock
+// If the number is between 4-6 = paper
+// If the number is between 7-10 = scissors
+
+// Convert computerNo to one of the choices.
+
+var computerTurn
+
+if (computerNo <= 3) {
+    var computerTurn =  ("rock");
+}
+else if (computerNo <=6) {
+    var  computerTurn = ("paper");
+}
+else if (computerNo <=10) {
+    var computerTurn = ("scissors");
+}
+
+// Let the user know what the computer's choice was.
+
+alert("The computer chooses: " + computerTurn);
+
+console.log(computerTurn);
+
+
+// Now we need to determine the score.
+
+var playerWins = 0;
+
+console.log(playerWins);
+
+
+// Here are the rules of R/P/S as an IF statement.
+
+// If it's the same, it's a tie.
+if (player1 === computerTurn) {
+    alert("It's a tie!");
+}
+
+// Rock beats scissors.
+else if (player1 === "rock" && computerTurn === "scissors") {
+    var playerWins = playerWins + 1 ;
+    alert("Rock beats scissors. You win! Your score is: " + playerWins);
+}
+
+// Rock loses to paper.
+else if (player1 === "rock" && computerTurn === "paper") {
+    var playerWins = playerWins - 1;
+    alert("Paper covers rock. You lost. Your score is: " + playerWins);
+}
+
+// Paper beats rock.
+else if (player1 === "paper" && computerTurn === "rock") {
+    var playerWins = playerWins + 1 ;
+    alert("Paper covers rock. You win! Your score is: " + playerWins);
+}
+
+// Paper loses to scissors.
+else if (player1 === "paper" && computerTurn === "scissors") {
+    var playerWins = playerWins - 1;
+    alert("Paper loses to scissors. You lost. Your score is: " + playerWins);
+}
+
+// Scissors loses to rock.
+else if (player1 === "scissors" && computerTurn === "rock") {
+    var playerWins = playerWins - 1;
+    alert("Scissors lose to rock. You lost. Your score is: " + playerWins);
+}
+
+// Scissors beats paper.
+else if (player1 === "scissors" && computerTurn === "paper") {
+    var playerWins = playerWins + 1;
+    alert("Scissors beat paper. You win! Your score is: " + playerWins);
+}
+
+console.log(playerWins);
+
+
+
+</script>
+    
+</body>
+</html>
+
+
+
+
